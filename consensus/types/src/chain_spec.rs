@@ -864,9 +864,9 @@ impl ChainSpec {
 
         Self {
             config_name: None,
-            max_committees_per_slot: 4,
-            target_committee_size: 4,
-            min_per_epoch_churn_limit: 2,
+            max_committees_per_slot: 10,
+            target_committee_size: 10,
+            min_per_epoch_churn_limit: 4,
             max_per_epoch_activation_churn_limit: 4,
             churn_limit_quotient: 32,
             shuffle_round_count: 10,
@@ -876,11 +876,11 @@ impl ChainSpec {
             genesis_fork_version: [0x00, 0x00, 0x00, 0x01],
             shard_committee_period: 64,
             genesis_delay: 300,
-            seconds_per_slot: 6,
+            seconds_per_slot: 12,
             inactivity_penalty_quotient: u64::checked_pow(2, 25).expect("pow does not overflow"),
             min_slashing_penalty_quotient: 64,
             proportional_slashing_multiplier: 2,
-            safe_slots_to_update_justified: 2,
+            safe_slots_to_update_justified: 8,
             // Altair
             epochs_per_sync_committee_period: Epoch::new(8),
             altair_fork_version: [0x01, 0x00, 0x00, 0x01],

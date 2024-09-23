@@ -455,19 +455,19 @@ pub struct MinimalEthSpec;
 impl EthSpec for MinimalEthSpec {
     type MaxCommitteesPerSlot = U4;
     type MaxValidatorsPerSlot = U8192;
-    type SlotsPerEpoch = U8;
+    type SlotsPerEpoch = U32;
     type EpochsPerEth1VotingPeriod = U4;
     type SlotsPerHistoricalRoot = U64;
     type EpochsPerHistoricalVector = U64;
     type EpochsPerSlashingsVector = U64;
-    type SyncCommitteeSize = U32;
-    type SyncSubcommitteeSize = U8; // 32 committee size / 4 sync committee subnet count
+    type SyncCommitteeSize = U64;
+    type SyncSubcommitteeSize = U16; // 32 committee size / 4 sync committee subnet count
     type MaxPendingAttestations = U1024; // 128 max attestations * 8 slots per epoch
     type SlotsPerEth1VotingPeriod = U32; // 4 epochs * 8 slots per epoch
-    type MaxWithdrawalsPerPayload = U4;
+    type MaxWithdrawalsPerPayload = U16;
     type FieldElementsPerBlob = U4096;
     type BytesPerBlob = U131072;
-    type MaxBlobCommitmentsPerBlock = U16;
+    type MaxBlobCommitmentsPerBlock = U4096;
     type KzgCommitmentInclusionProofDepth = U9;
     type PendingPartialWithdrawalsLimit = U64;
     type PendingConsolidationsLimit = U64;
